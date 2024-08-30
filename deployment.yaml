@@ -17,7 +17,7 @@ spec:
       containers:
         # website::tag::2:: The container runs a Python webapp on port 5000 that responds with "Hello, World!"
         - name: hello-world
-          image: training/webapp:latest
+          image: europe-west2-docker.pkg.dev/onecom-operations/git-repo/test-image2:11
           ports:
             - containerPort: 5000
 ---
