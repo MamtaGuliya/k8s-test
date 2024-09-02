@@ -19,7 +19,7 @@ spec:
         - name: hello-world
           image: europe-west2-docker.pkg.dev/onecom-operations/git-repo/test-image2:11
           ports:
-            - containerPort: 5000
+            - containerPort: 8080
 ---
 # website::tag::3:: Expose the Python webapp on port 5000 via a Kubernetes LoadBalancer.
 kind: Service
@@ -31,6 +31,6 @@ spec:
     app: hello-world
   ports:
     - protocol: TCP
-      targetPort: 5000
-      port: 5000
+      targetPort: 8080
+      port: 8080
   type: LoadBalancer
