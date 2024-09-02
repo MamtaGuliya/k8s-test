@@ -2,25 +2,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: python-app-deployment
+  labels:
+    app: python-app
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: python-app
-  replicas: 1
   template:
     metadata:
       labels:
         app: python-app
     spec:
       containers:
-        - name: python-app
-          image: test-image2:latest
-          ports:
-            - containerPort: 80
-            command: ["python3","app.py"]
+      - name: python-app
+        image: test-image2:latest
+        ports:
+        - containerPort: 80
+        command: ["python3", "app.py"]
 ---
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: python-app-service
 spec:
@@ -28,6 +30,6 @@ spec:
     app: python-app
   ports:
     - protocol: TCP
-      targetPort: 80
       port: 80
-  type: LoadBalancer
+      targetPort: 80
+  type: LoadBalancer
