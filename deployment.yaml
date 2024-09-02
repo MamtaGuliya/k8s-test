@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: python-app
   template:
-    metadata: 
+    metadata:
       labels:
         app: python-app
     spec:
