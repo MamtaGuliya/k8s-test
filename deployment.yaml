@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: python-app
-          image: europe-west2-docker.pkg.dev/onecom-operations/git-repo/test-image2:45
+          image: europe-west2-docker.pkg.dev/onecom-operations/git-repo/hello-image:45
           imagePullPolicy: Always
           ports:
             - containerPort: 80
